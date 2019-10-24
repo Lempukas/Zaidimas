@@ -13,22 +13,31 @@ public class Main {
     public static void main(String[] args) {
         long mirusiuSkaicius = 0;
         List<Human> items = new ArrayList<>(1000);
-        // Pradiniai zmones su random amziumi ir lytimi
+        // Pradiniai zmones su random amziumi ir lytimi ir random vardu pagal lyti
         for (int i = 1; i <= 10; i++) {
             int randomN = (int) (Math.random() * 80) + 1;
-            Human a = new Human(Human.Gender.getRandomGender(), randomN, i);
-            //TODO padaryti name if Gender==F
-            items.add(a);
+            Human human = new Human(Human.Gender.getRandomGender(), randomN, i);
+            if (human.gender == Human.Gender.F) {
+                human.name = human.randomNameFemale();
+            } else {
+                human.name = human.randomNameMale();
+            }
+            items.add(human);
         }
 
         //Metu loopas
-        for (int i = 0; i < 200; i++) {
+        for (int i = 0; i < 10; i++) {
 
             long humans20To50 = items.stream().filter(a -> a.getAge() >= 20 && a.getAge() <= 40).count();
             int newHumansCounter = 0;
             for (int randomBorn = 0; randomBorn < humans20To50 * 0.1; randomBorn++) {
                 int id = World.getCounter() + 1;
                 Human human = new Human(Human.Gender.getRandomGender(), 0, id);
+                if (human.gender == Human.Gender.F) {
+                    human.name = human.randomNameFemale();
+                } else {
+                    human.name = human.randomNameMale();
+                }
                 items.add(human);
                 newHumansCounter++;
             }
@@ -55,22 +64,5 @@ public class Main {
             System.out.println(" ");
             System.out.println("Jie pagimde: " + newHumansCounter + " siemet.");
         }
-    }
-
-}
-
-class TestRandomNameFemale {
-    public static void main(String[] args) {
-        Human human = new Human();
-        human.gender = Human.Gender.getRandomGender();
-        System.out.println(human.gender);
-
-        if(human.gender == Human.Gender.F) {
-            human.name = human.randomNameFemale();
-        }else {
-            human.name = human.randomNameMale();
-        }
-
-        System.out.println(human);
     }
 }

@@ -4,19 +4,7 @@ import java.util.stream.Stream;
 public class Human extends Items {
 
     public enum Gender {
-        M("1"),
-        F("2");
-
-        public final String label;
-
-        private Gender(String label) {
-            this.label = label;
-        }
-
-        public String getLabel() {
-            return label;
-        }
-
+        M,F;
         public static Gender getRandomGender() {
             Random random = new Random();
             return values()[random.nextInt(values().length)];
@@ -48,11 +36,6 @@ public class Human extends Items {
         this.age = age;
         this.id = id;
     }
-    Human(){
-
-    }
-
-
 
     @Override
     public String toString() {
