@@ -1,3 +1,5 @@
+package lt.mantasgineika;
+
 import com.sun.tools.javac.jvm.Items;
 
 

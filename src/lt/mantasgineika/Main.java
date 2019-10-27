@@ -1,10 +1,6 @@
+package lt.mantasgineika;
 
-import sun.security.krb5.internal.crypto.HmacMd5ArcFourCksumType;
-
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.function.Predicate;
 
@@ -26,11 +22,11 @@ public class Main {
         }
 
         //Metu loopas
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 200; i++) {
 
-            long humans20To50 = items.stream().filter(a -> a.getAge() >= 20 && a.getAge() <= 40).count();
+            long humans20To40 = items.stream().filter(a -> a.getAge() >= 20 && a.getAge() <= 40).count();
             int newHumansCounter = 0;
-            for (int randomBorn = 0; randomBorn < humans20To50 * 0.1; randomBorn++) {
+            for (int randomBorn = 0; randomBorn < humans20To40 * 0.1; randomBorn++) {
                 int id = World.getCounter() + 1;
                 Human human = new Human(Human.Gender.getRandomGender(), 0, id);
                 if (human.gender == Human.Gender.F) {
@@ -60,7 +56,7 @@ public class Main {
             System.out.println(" ");
             System.out.println("Is viso mire : " + mirusiuSkaicius + " zmoniu.");
             System.out.println(" ");
-            System.out.println("Zmoniu tarp 20 ir 40 metu yra: " + humans20To50);
+            System.out.println("Zmoniu tarp 20 ir 40 metu yra: " + humans20To40);
             System.out.println(" ");
             System.out.println("Jie pagimde: " + newHumansCounter + " siemet.");
         }

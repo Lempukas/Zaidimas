@@ -1,5 +1,6 @@
+package lt.mantasgineika;
+
 import java.util.Random;
-import java.util.stream.Stream;
 
 public class Human extends Items {
 
@@ -39,7 +40,7 @@ public class Human extends Items {
 
     @Override
     public String toString() {
-        return "Human{" +
+        return "lt.mantasgineika.Human{" +
                 "id=" + id +
                 ", age=" + age +
                 ", gender=" + gender +

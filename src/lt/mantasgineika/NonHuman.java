@@ -1,3 +1,5 @@
+package lt.mantasgineika;
+
 public class NonHuman extends World {
     String type;
     String name;
