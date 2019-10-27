@@ -45,20 +45,26 @@ public class Main {
             items.removeIf(ismetimas);
 
             for (Human item : items) {
-                System.out.println(item);
                 item.setAge(item.getAge() + 1);
             }
 
-            System.out.println(" ");
-            System.out.println("Ideta zmoniu is viso: " + World.getCounter());
-            System.out.println(" ");
-            System.out.println("Dabar yra " + items.size() + " zmoniu.");
-            System.out.println(" ");
-            System.out.println("Is viso mire : " + mirusiuSkaicius + " zmoniu.");
-            System.out.println(" ");
-            System.out.println("Zmoniu tarp 20 ir 40 metu yra: " + humans20To40);
-            System.out.println(" ");
-            System.out.println("Jie pagimde: " + newHumansCounter + " siemet.");
+                System.out.println("Zmoniu tarp 20 ir 40 metu yra: " + humans20To40);
+
+                System.out.println("Jie pagimde: " + newHumansCounter + " siemet.");
+
         }
+        long isMale = items.stream().filter(a -> a.getGender() == Human.Gender.M).count();
+        long isFemale = items.stream().filter(a -> a.getGender() == Human.Gender.F).count();
+
+        System.out.println(" ");
+        System.out.println("Ideta zmoniu is viso: " + World.getCounter());
+        System.out.println(" ");
+        System.out.println("Gyvu yra " + items.size() + " zmoniu.");
+        System.out.println("Is ju " + isMale + " vyru.");
+        System.out.println("Is ju " + isFemale + " moteru.");
+        System.out.println(" ");
+        System.out.println("Is viso mire : " + mirusiuSkaicius + " zmoniu.");
+        System.out.println(" ");
+
     }
 }
