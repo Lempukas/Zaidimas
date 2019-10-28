@@ -53,8 +53,6 @@ public class Human extends Items {
                 ", name=" + name +
                 '}';
     }
-
-
 }
 
 

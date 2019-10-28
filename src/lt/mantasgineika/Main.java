@@ -48,9 +48,10 @@ public class Main {
                 item.setAge(item.getAge() + 1);
             }
 
-                System.out.println("Zmoniu tarp 20 ir 40 metu yra: " + humans20To40);
-
-                System.out.println("Jie pagimde: " + newHumansCounter + " siemet.");
+            System.out.println("Zmoniu tarp 20 ir 40 metu yra: " + humans20To40);
+            System.out.println("Jie pagimde: " + newHumansCounter + " siemet.");
+            System.out.println("Siemet mire " + skaiciuoti + " zmones.");
+            System.out.println("----");
 
         }
         long isMale = items.stream().filter(a -> a.getGender() == Human.Gender.M).count();
